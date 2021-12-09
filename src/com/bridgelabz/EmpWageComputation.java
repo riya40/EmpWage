@@ -1,10 +1,11 @@
 package com.bridgelabz;
 
 public class EmpWageComputation {
+    public static final int Working_Days=20;
     public static void main(String args[]){
 
-        int wageperhour=20,wage,fulldayhour=8,partimedayhour=4;
-        int hours=0;
+        int wageperhour=20,wage=0;
+        int hours=0,totalhours=0,total=0;
         //Displaying The Welcome Message
         System.out.println("Welcome To Employee Wage Computation");
 
@@ -26,7 +27,14 @@ public class EmpWageComputation {
                 System.out.println("Employee is Absent");
                 break;
         }
-        wage=wageperhour*hours;
-        System.out.println("wage is :"+wage);
+
+        //Calculating the Wage for working days
+        for(int i=0;i<Working_Days;i++) {
+            wage = wageperhour * hours;
+            total+= wage;
+            totalhours+=hours;
+        }
+        System.out.println("wage is:"+wage+"\ntotal hours"+totalhours+"\ntotal wage:"+total);
+
     }
 }
